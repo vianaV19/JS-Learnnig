@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //BOM - Browser Object Model
+        //Window
+
+        var janela 
+
+        function abrir(URL){
+            janela = window.open(URL, "_blank")
+        }
+
+        function fechar()
+        {
+            janela.close()
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="abrir()">Open</button>
+    <button type="button" onclick="fechar()">Close</button>
+    <button type="button" onclick="window.print()">Print</button>
+    <button type="button" onclick="abrir('https://www.w3schools.com/jsref/obj_window.asp')">Open Documentation</button>
+</body>
+</html>

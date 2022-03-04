@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 4</title>
+
+    <script>
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+        function adicionarItem(){
+            var entrada = document.getElementById('item').value
+            
+            if(entrada.length == "") {
+                alert("Informe um valor valido")
+            }else{
+                if(objetos.indexOf(entrada) < 0){
+                    objetos.push(entrada)
+
+                    console.log(objetos)
+
+                    document.getElementById('item').value = "" 
+                }else{
+                    alert("Objeto ja foi adicionado!")
+                }
+            }
+        }
+        
+        function ordenarItens(){
+            console.log(objetos.sort())
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="item" placeholder="Insira um item">
+        <button onclick="adicionarItem()">Adicionar</button>
+        <button onclick="ordenarItens()">Ordenar</button>
+    </div>
+</body>
+</html>

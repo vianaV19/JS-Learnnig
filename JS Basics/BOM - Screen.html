@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Ambos representam o potencial de dimensao do browser
+        var heigth = window.screen.availHeight
+        var width = window.screen.availWidth
+
+        function exibirDimensao(){
+            alert(heigth +" "+width)
+        }
+
+        if(width  < 500){
+            document.write("Logica impressao mobile")
+        }else{
+            document.write("Logica impressao web")
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="exibirDimensao()">Exibir Dimensao</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <script>
+        var num1 = parseInt(prompt("Insira o numero 1: "))
+        
+        var operacao = prompt("Insira a operação");
+
+        var num2 = parseInt(prompt("Insira o numero 2: "))
+
+        var resultado = calcular(num1, num2, operacao)
+
+        document.write("<h1>Atividade 2 - Curso Javascript</h1>")
+        document.write("<hr>")
+        document.write("<strong>Operacao:</strong> "+operacao)
+        document.write("<br><br>")
+        document.write("Resultado:"+resultado)
+
+        function calcular(num1, num2, operacao){
+            if(operacao === "soma"){
+                return num1 + num2
+            }else if(operacao === "subtração"){
+                return num1 - num2
+            }
+
+            return 0
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

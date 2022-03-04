@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteração</title>
+
+    <script>
+        // var frutas = ["Banana", "Maça", "Uva", "Morango"]
+
+        var frutas = Array()
+        
+        frutas['a'] = "banana"
+        frutas['b'] = "Maça"
+        frutas[10] = "Uva"
+        frutas['zebra'] = "Cacau"
+        frutas[-1] = "Laranja"
+        frutas[true] = "Pera"
+        //Clausula for in permite navegar por indices personalizados
+        for (var x in frutas) {
+            console.log(x)
+
+            document.write("Indice [" +x+"] que contem: "+frutas[x]+"<br>")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

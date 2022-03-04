@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+
+    <script>
+        function mudarBackground(){
+            document.getElementById('entrada').style.background = "yellow"
+        }
+
+        function verifica(){
+            var entrada = document.getElementById('entrada')
+
+            if(entrada.value.length < 3){
+                entrada.style.background = "red"
+            }else{
+                entrada.style.background = "green"
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="entrada" onfocus="mudarBackground()" onblur="verifica()">
+</body>
+</html>

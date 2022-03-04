@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - formulario</title>
+
+    <script>
+        function acao(evento) {
+            console.log(evento)
+        }
+    </script>
+</head>
+<body>
+    <input onfocus="acao('ganhou foco')" type="text" placeholder="onfocus">
+
+    <input onblur="acao('perdeu foco')" type="text">
+
+    <select onchange="acao('mudou')">
+        <option value="1">option 1</option>
+        <option value="2">option 2</option>
+    </select>
+</body>
+</html>

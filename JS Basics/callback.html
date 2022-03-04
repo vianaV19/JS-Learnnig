@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+
+    <script>
+        function exibirArtigo(id, callbackSucesso, callbackErro){
+            if(true){
+                callbackSucesso("Javascript", "Javascript eh brabo");
+            }else{
+                callbackErro("Erro");
+            }
+        }
+
+        //tecnica wrapper - Ao inves de passa a funcao eu crio uma variavel com uma função contida que sera utilziada como parametro callbak.
+
+        var callbackSucesso = function(nome, descricao){
+            document.write("<h1>"+nome+"</h1>"+ "<hr>"+descricao);
+        }
+
+        var callbackErro = function(erro){
+            document.write(erro);
+        }
+
+        //Cuidado para nao colocar com parenteses, pois isso indica que metodo deve ser executado naquele momento.
+
+        exibirArtigo(12, callbackSucesso, callbackErro)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

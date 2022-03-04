@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Valores</title>
+    
+    <script>
+        function distribuiCaractere(){
+            var caractere = document.getElementById('entrada').value;
+
+            document.getElementById('entrada').value = ""
+
+            switch(caractere){
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    document.getElementById('numeros').value += caractere
+                    break;
+                default:
+                    document.getElementById('letra').value += caractere
+                    break;
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="entrada" placeholder="Digite um valor" onkeyup="distribuiCaractere()">
+
+    <hr>
+
+    <span>Letras:</span>
+    <input type="text" id="numeros" disabled>
+
+    <span>Numeros:</span>
+    <input type="text" id="letra" disabled>
+
+</body>
+</html>
