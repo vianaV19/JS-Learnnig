@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        let cliente = {
+            nome: 'carlos',
+            idade: 23,
+            sexo: 'M'
+        }        
+
+        class Pessoa {
+            constructor(nome, idade, sexo){
+                this.nome = nome
+                this.idade = idade
+                this.sexo = sexo
+            }
+        }
+
+        let p = new Pessoa('Jorge', 23, 'M')
+
+        console.log(p.keys)
+
+        console.log(p.nome)
+
+        //o js passa a referencia para a variave. nao a copia .
+
+        const dessert = { type: 'pie'};
+        dessert.type = 'fruit';
+        
+        const second = dessert;
+        second.type = 'pudding'
+
+        console.log(dessert.type)
+
+        class Rola {
+            static rolinha = [];
+
+            eat(){
+                Rola.rolinha.push('rolassa')
+            }
+            
+        }
+
+        let r = new Rola();
+        r.eat()
+        
+        console.log(Rola.rolinha)
+
+        throw ('erro');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

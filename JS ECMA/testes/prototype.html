@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(id, name, age, country = 'brasil' ){
+            this.id = id
+            this.name = name
+            this.age = age
+            this.country = country 
+        }
+        
+        Person.prototype.show = function (){
+            console.log(this.id )
+            console.log(this.name )
+            console.log(this.age )
+        }
+
+        let person = new Person(12, 'jorge', 23)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

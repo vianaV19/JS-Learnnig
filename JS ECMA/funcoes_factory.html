@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        //Funcoes factory
+        //meio alternativo a criacao de objetos literais com objetivo de tornar o codigo menos veboso
+
+        //usando objetos literais
+        let bicicleta = {
+            cor: 'branca',
+            marcha : 'unica',
+            pedalar(){
+                console.log("pedalando...")
+            }   
+        }
+
+        let bicicleta2 ={
+            cor: 'marrom',
+            marcha: 'unica',
+            pedalar(){
+                console.log("pedalando...")
+            }
+        }
+
+        //utilizando factory - design pattern
+
+        let bicicletaFactory = (cor = 'branca', marcha = 'uncia', aro  = 12) => {
+            //lógica
+            //requisicao http
+            //resposta http
+            return{
+                cor,
+                marcha,
+                aro, 
+                pedalar(){
+                    console.log("pedalando...")
+                }
+            }
+        }
+
+        console.log(bicicletaFactory('marrom', undefined, 13))
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

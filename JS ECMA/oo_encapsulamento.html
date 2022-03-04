@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        class Tv {
+            constructor(){
+                //Conveção (_) - utilziada no inicio da varaivel para indicar ao programador que essa variavel nao deve ser acessada. Nao tem como defnir o private porque o javascript ainda n suporta.
+                this._relacaoCanais = Array(2, 5, 12, 15, 20)
+                this._canalAtivo = 5;
+                this._volume = 4
+            }
+
+            get canalAtivo(){
+                return this._canalAtivo
+            }
+            
+            set canalAtivo(canal){
+                if(this._relacaoCanais.indexOf(canal) !== -1) this._canalAtivo = canal
+            }
+        }
+
+        let tv = new Tv()
+
+        tv.canalAtivo = 15
+
+        console.log(tv.canalAtivo)
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

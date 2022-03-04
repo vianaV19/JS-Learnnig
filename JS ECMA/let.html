@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        //variavel tipo let
+        //let preserva o escopo onde a variavel é declarada impedindo o hoisting 
+        //Isso ajuda o programador a nao se confundir pois ele pode acabar sobrescrevendo a variavel
+        var serie = "The walking dead"
+        if(true)
+        {
+            //sofrera hositing
+            var serie = "Friends"
+            console.log(serie)
+        }
+
+        console.log(serie)
+        
+
+        function x(){
+            if (true){
+                var serie2 = 'Dr House'
+            }
+            
+            let serie3 = 'Tititi'
+
+            console.log(serie2)
+            console.log(serie3)
+        }
+    
+        x()
+        
+
+        if(true){
+            //preserva o bloco
+            let serie2 = 'hannibal'
+        }
+
+        var serie4 = "dexter"
+        
+        if(true){
+            let serie4 = "sherlock"
+            console.log(serie4)
+        }
+        console.log(serie4)
+
+        //ira carregar um erro
+        // console.log(serie2)
+        
+
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

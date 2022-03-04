@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //parte 1 
+        let frutas = ['uva', 'mamao', 'pessego', 'limao']
+
+        let [a, , b = 'abacaxi', c, e = 'morango'] = frutas
+
+        console.log(a, b, c, e)
+
+        let nomes = [['jorge', 'carlos', 'magnus'], ['paulinho', 'pedro']]
+
+        let [[, n2]] = nomes
+
+        console.log(n2)
+
+        //parte 2
+
+        let produto = {
+            descricao: 'notebook',
+            preco: 1800,
+            detalhes: {
+                fabricante: 'abc',
+                modelo: 'xrr'
+            }
+        }
+
+        let {descricao: d, preco: p} = produto
+        let {detalhes: {fabricante:f}} = produto
+
+        console.log(d)
+        console.log(p)
+        console.log(f)
+
+        //parte 3
+    
+        let array = [10, 20, 30, 40]
+
+        let obj ={
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+        }
+
+        function teste([a, ,b, , e = 1000], jota = 100){
+            console.log(a, b, e, jota)
+        }
+
+        teste(array)
+
+ 
+        function teste2({a: x, d, z = 10}){
+            console.log(x, d, z)
+        }
+
+        teste2(obj)
+
+      
+
+     
+
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

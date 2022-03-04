@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+         class Funcionario{
+             constructor(nome, cpf, data_nascimento){
+                 this.nome = nome
+                 this.cpf = cpf
+                 this.data_nascimento = data_nascimento
+             }
+
+             get informacoes(){
+                 return `Nome: ${this.nome}\nCPF: ${this.cpf}\nNascimento: ${this.data_nascimento}`
+             }
+         }
+
+         class Professor extends Funcionario{
+             constructor(nome, cpf, data_nascimento, materia){
+                 super(nome, cpf, data_nascimento)
+                 this.materia = materia
+             }
+
+             get informacoes(){
+                return `Nome: ${this.nome}\nCPF: ${this.cpf}\nNascimento: ${this.data_nascimento}\nMateria: ${this.materia}`
+             }
+         }
+
+         let carla = new Professor('carla', 12312312312, '21-12-2002', 'Geografia')
+
+         console.log(carla.informacoes)
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

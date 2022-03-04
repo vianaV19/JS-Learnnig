@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        class ContaBancaria {
+            //numeroConta
+            //agencia
+            //saldo
+            //limite
+            constructor(){
+                this.agencia = 1075
+                this.numeroConta = 851125
+                this.saldo = 1000
+                this.limite = 5000
+            }
+
+            sacar(valor){
+                this.saldo -= valor
+            }
+
+            depositar(valor){
+                this.saldo += valor
+            }
+
+            getSaldo(){
+                return this.saldo
+            }
+        }
+
+        let conta1 = new ContaBancaria()
+
+        console.log(conta1.getSaldo())
+        conta1.depositar(100)
+        console.log(conta1.getSaldo())
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>

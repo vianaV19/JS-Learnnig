@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        //a syntax ... pode ser usada tanto para rest (juntar) quanto para spread (espalhar)
+        //parte 1
+
+        let testeSpread = 'Teste spread'
+
+        console.log(testeSpread)
+        console.log(...testeSpread)
+        console.log([...testeSpread])
+
+        let listaCursos1 = ['a', 'b', 'c']
+        let listaCursos2 = ['d', 'e', 'f']
+        let listaCompleta = [...listaCursos1, ...listaCursos2, 'asd']
+
+        console.log(listaCompleta)
+
+        let pessoa = {nome: 'jorge', endereco: 'rola'}
+        let funcionario = {cargo: 'pinto', ...pessoa}
+
+        console.log(funcionario)
+
+        //parte 2
+        function soma(...param){
+            let total = 0
+
+            console.log(param)
+            
+            param.forEach(v => total += v)
+
+            return total
+        }
+
+        function multiplicacao(m, ...param){
+            param.forEach(v => console.log(`${m} x ${v} = ${m * v}`))
+        }
+
+        console.log(soma(3, 4, 5, 1, 2))
+
+        multiplicacao(4, 1, 2, 3, 6, 7, 8)
+    </script>
+</head>
+<body>
+
+  
+</body>
+</html>
